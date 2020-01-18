@@ -1,0 +1,5 @@
+ANY_KEY: "@file(include_values.yml)"
+"@include UNIQUE_STRING":  "@file( include_replace_key_also.yml )"
+
+# "@includeIf(boolVar) UNIQUE_STRING:"    ANY_VALUE
+# "@includeIf( boolVar ) UNIQUE_STRING":  "@file( [REPLACE_STRING]sub/sub/fil.yml )"

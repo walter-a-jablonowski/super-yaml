@@ -1,0 +1,29 @@
+{
+  "name": "walter-a-jablonowski/super-yaml",
+  "description": "Superchages Symfony YAML",
+  "type": "library",
+  "keywords": ["YAML", "Symfony"],
+  "homepage": "https://github.com/walter-a-jablonowski/super-yaml",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Walter A. Jablonowski",
+      "email": "walter.a.jablonowski@gmail.com",
+      "homepage": "https://walter-a-jablonowski.github.io",
+      "role": "Developer"
+    }
+  ],
+
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+
+  "require": {
+    "symfony/yaml": ">=3.4.21"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "WAJ\\Lib\\BasicClasses\\": "src/"
+   }
+  }
+}
