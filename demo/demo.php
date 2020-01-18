@@ -1,6 +1,6 @@
 <?php
 
-use WAJ\Lib\BasicClasses\SuperYAML;
+use WAJ\Lib\Persis\SuperYAML;
 use Kint\Kint;
 
 require( 'vendor/autoload.php' );

@@ -1,6 +1,6 @@
 <?php
 
-namespace WAJ\Lib\BasicClasses;
+namespace WAJ\Lib\Persis
 
 use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Yaml\Exception\ParseException;
