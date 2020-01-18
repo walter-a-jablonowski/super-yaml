@@ -24,10 +24,10 @@ ANY_KEY:                   "@file([REPLACE_STRING]sub/sub/fil.yml)"
 "@include UNIQUE_STRING":  "@file( [REPLACE_STRING]sub/sub/fil.yml )"  # also includes key(s)
 ```
 
-- **UNIQUE_STRING**    = a user defined unique string in case you are using the same key-command again (yml needs unique keys), or leave out if just once
+- **UNIQUE_STRING**    = a user defined unique string in case you are using the same key again (yml needs unique keys)
 - **[REPLACE_STRING]** = a string that will be replaced as defined in $rpl argument
 
-See `demo/demo.php`: one yml file include 2 yml-files, result:
+See `demo/demo.php`: one yml file includes 2 yml-files, result:
 
 ![scr.jpg](misc/scr.jpg?raw=true "Scr")
 
