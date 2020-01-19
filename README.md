@@ -1,8 +1,8 @@
 # Super YAML
 
-**Superchages Symfony YAML**
+**Supercharges YAML**
 
-Currently adds include feature.
+Currently adds include feature, uses Symfony Yaml.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
