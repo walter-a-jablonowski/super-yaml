@@ -24,12 +24,20 @@ SuperYaml::parse( $yml );
 SuperYaml::parseFile( $fil );
 SuperYaml::dump( $yml );
 
-SuperYaml::parse( $yml, [  // use symfony flags
+SuperYaml::parse( $yml, [  // use symfony flags while parsing
+  'flags' => ...
+]); 
+
+SuperYaml::dump( $yml, [  // use symfony inline, indent, flags on dumping
+  'inline' => ... ,
+  'indent' => ... ,
   'flags' => ...
 ]); 
 ```
 
 ### Include
+
+See `demo/demo.php`: one yml file includes 2 yml-files
 
 ```yaml
 ANY_KEY:                     "@file([REPLACE_STRING]sub/sub/fil.yml)"
@@ -39,13 +47,25 @@ ANY_KEY:                     "@file([REPLACE_STRING]sub/sub/fil.yml)"
 - **[UNIQUE_STRING]**  = a user defined unique string in case you are using the same key again (yml needs unique keys)
 - **[REPLACE_STRING]** = a string that will be replaced as defined in $rpl argument
 
-See `demo/demo.php`: one yml file includes 2 yml-files, result:
+Result:
 
 ![scr.jpg](misc/scr.jpg?raw=true "Scr")
 
 ### Replace constant string
 
+See `demo/demo.php **sample under construction**
+
+```php
+SuperYaml::parse( $yml, $args = [
+  'rpl' => [
+  
+  ]
+]);
+```
+
 ### Include conditionally
+
+See `demo/demo.php **sample under construction**
 
 ```yaml
 "@includeIf(boolVar) [UNIQUE_STRING]:"    ANY_VALUE
@@ -54,25 +74,9 @@ See `demo/demo.php`: one yml file includes 2 yml-files, result:
 
 ```php
 SuperYaml::parse( $yml, $args = [
-  'rpl'     => [ ],
   'boolVar' => [
 
-  ],
-  'flags' =>
-]);
-
-SuperYaml::parseFile( $yml, $args = [
-  'rpl'     => [ ],
-  'boolVar' => [
-
-  ],
-  'flags' =>
-]);
-
-SuperYaml::dump( $yml, $args = [
-  'inline' =>
-  'indent' =>
-  'flags'  =>
+  ]
 ]);
 ```
 
