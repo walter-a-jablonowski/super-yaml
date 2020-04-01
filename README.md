@@ -53,7 +53,7 @@ Result:
 
 ### Replace constant string
 
-See `demo/demo.php **sample under construction**
+See `demo/demo.php` **sample under construction**
 
 ```php
 SuperYaml::parse( $yml, $args = [
@@ -65,7 +65,7 @@ SuperYaml::parse( $yml, $args = [
 
 ### Include conditionally
 
-See `demo/demo.php **sample under construction**
+See `demo/demo.php` **sample under construction**
 
 ```yaml
 "@includeIf(boolVar) [UNIQUE_STRING]:"    ANY_VALUE
