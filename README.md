@@ -1,8 +1,6 @@
 # Super YAML
 
-**Supercharges YAML**
-
-Currently adds include feature, uses Symfony Yaml.
+**Supercharges YAML**, based on Symfony Yaml, currently adds include feature.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -20,23 +18,34 @@ composer require walter-a-jablonowski/super-yaml
 ### Include
 
 ```yaml
-ANY_KEY:                   "@file([REPLACE_STRING]sub/sub/fil.yml)"
-"@include UNIQUE_STRING":  "@file( [REPLACE_STRING]sub/sub/fil.yml )"  # also includes key(s)
+ANY_KEY:                     "@file([REPLACE_STRING]sub/sub/fil.yml)"
+"@include [UNIQUE_STRING]":  "@file( [REPLACE_STRING]sub/sub/fil.yml )"  # also includes key(s)
 ```
 
-- **UNIQUE_STRING**    = a user defined unique string in case you are using the same key again (yml needs unique keys)
+- **[UNIQUE_STRING]**  = a user defined unique string in case you are using the same key again (yml needs unique keys)
 - **[REPLACE_STRING]** = a string that will be replaced as defined in $rpl argument
+
+```php
+SuperYaml::parse( $yml );
+SuperYaml::parseFile( $fil );
+SuperYaml::dump( $yml );
+
+SuperYaml::parse( $yml, [  // use symfony flags as
+  'flags' => ...
+]); 
+```
 
 See `demo/demo.php`: one yml file includes 2 yml-files, result:
 
 ![scr.jpg](misc/scr.jpg?raw=true "Scr")
 
+### Replace constant string
 
 ### Include conditionally
 
 ```yaml
-"@includeIf(boolVar) UNIQUE_STRING:"    ANY_VALUE
-"@includeIf( boolVar ) UNIQUE_STRING":  "@file( [REPLACE_STRING]sub/sub/fil.yml )"
+"@includeIf(boolVar) [UNIQUE_STRING]:"    ANY_VALUE
+"@includeIf( boolVar ) [UNIQUE_STRING]":  "@file( [REPLACE_STRING]sub/sub/fil.yml )"
 ```
 
 ```php
