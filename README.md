@@ -44,7 +44,7 @@ ANY_KEY:                     "@file(sub/sub/fil.yml)"
 "@include [UNIQUE_STRING]":  "@file( sub/sub/fil.yml )"  # also includes key(s)
 ```
 
-- **[UNIQUE_STRING]** = a user defined unique string in case you are using the same key again (yml needs unique keys)
+**[UNIQUE_STRING]** = a user defined unique string in case you are using the same key again (yml needs unique keys)
 
 Result:
 
@@ -59,8 +59,8 @@ ANY_KEY:                     "@file([REPLACE_STRING]sub/sub/fil.yml)"
 "@include [UNIQUE_STRING]":  "@file( [REPLACE_STRING]sub/sub/fil.yml )"  # also includes key(s)
 ```
 
-- **[UNIQUE_STRING]**  = see above
-- **[REPLACE_STRING]** = a string that will be replaced as defined in $rpl argument
+**[UNIQUE_STRING]**  = see above \
+**[REPLACE_STRING]** = a string that will be replaced as defined in $rpl argument
 
 ```php
 SuperYaml::parse( $yml, [  // additional args as array
@@ -81,7 +81,7 @@ See `demo/demo.php` **sample under construction**
 "@includeIf( boolVar ) [UNIQUE_STRING]":  "@file( sub/sub/fil.yml )"
 ```
 
-- **[UNIQUE_STRING]** = see above
+**[UNIQUE_STRING]** = see above
 
 ```php
 SuperYaml::parse( $yml, [
