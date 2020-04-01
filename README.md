@@ -25,10 +25,10 @@ SuperYaml::parseFile( $fil );
 SuperYaml::dump( $yml );
 
 SuperYaml::parse( $yml, [  // use symfony flags while parsing
-  'flags' => ...
+  'flags' => ...           // difference: additional args as array
 ]); 
 
-SuperYaml::dump( $yml, [  // use symfony inline, indent, flags on dumping
+SuperYaml::dump( $yml, [   // use symfony inline, indent, flags on dumping
   'inline' => ... ,
   'indent' => ... ,
   'flags' => ...
@@ -56,7 +56,7 @@ Result:
 See `demo/demo.php` **sample under construction**
 
 ```php
-SuperYaml::parse( $yml, $args = [
+SuperYaml::parse( $yml, [  // additional args as array
   'rpl' => [
   
   ]
@@ -73,7 +73,7 @@ See `demo/demo.php` **sample under construction**
 ```
 
 ```php
-SuperYaml::parse( $yml, $args = [
+SuperYaml::parse( $yml, [
   'boolVar' => [
 
   ]
