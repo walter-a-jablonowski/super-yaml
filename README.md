@@ -40,12 +40,11 @@ SuperYaml::dump( $yml, [   // use symfony inline, indent, flags on dumping
 See `demo/demo.php`: one yml file includes 2 yml-files
 
 ```yaml
-ANY_KEY:                     "@file([REPLACE_STRING]sub/sub/fil.yml)"
-"@include [UNIQUE_STRING]":  "@file( [REPLACE_STRING]sub/sub/fil.yml )"  # also includes key(s)
+ANY_KEY:                     "@file(sub/sub/fil.yml)"
+"@include [UNIQUE_STRING]":  "@file( sub/sub/fil.yml )"  # also includes key(s)
 ```
 
-- **[UNIQUE_STRING]**  = a user defined unique string in case you are using the same key again (yml needs unique keys)
-- **[REPLACE_STRING]** = a string that will be replaced as defined in $rpl argument
+- **[UNIQUE_STRING]** = a user defined unique string in case you are using the same key again (yml needs unique keys)
 
 Result:
 
@@ -54,6 +53,14 @@ Result:
 ### Replace constant string
 
 See `demo/demo.php` **sample under construction**
+
+```yaml
+ANY_KEY:                     "@file([REPLACE_STRING]sub/sub/fil.yml)"
+"@include [UNIQUE_STRING]":  "@file( [REPLACE_STRING]sub/sub/fil.yml )"  # also includes key(s)
+```
+
+- **[UNIQUE_STRING]**  = see above
+- **[REPLACE_STRING]** = a string that will be replaced as defined in $rpl argument
 
 ```php
 SuperYaml::parse( $yml, [  // additional args as array
@@ -69,8 +76,10 @@ See `demo/demo.php` **sample under construction**
 
 ```yaml
 "@includeIf(boolVar) [UNIQUE_STRING]:"    ANY_VALUE
-"@includeIf( boolVar ) [UNIQUE_STRING]":  "@file( [REPLACE_STRING]sub/sub/fil.yml )"
+"@includeIf( boolVar ) [UNIQUE_STRING]":  "@file( sub/sub/fil.yml )"
 ```
+
+- **[UNIQUE_STRING]** = see above
 
 ```php
 SuperYaml::parse( $yml, [
