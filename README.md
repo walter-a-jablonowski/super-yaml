@@ -24,7 +24,7 @@ SuperYaml::parse( $yml );
 SuperYaml::parseFile( $fil );
 SuperYaml::dump( $yml );
 
-SuperYaml::parse( $yml, [  // use symfony flags as
+SuperYaml::parse( $yml, [  // use symfony flags
   'flags' => ...
 ]); 
 ```
