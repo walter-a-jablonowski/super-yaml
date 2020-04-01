@@ -72,6 +72,8 @@ SuperYaml::parse( $yml, [  // additional args as array
 
 ### Include conditionally
 
+You may define a list of bool vars that are used to decide wheather a file should be included. Calculate all your values before calling SuperYaml.
+
 See `demo/demo.php` **sample under construction**
 
 ```yaml
