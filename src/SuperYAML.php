@@ -1,6 +1,6 @@
 <?php
 
-namespace WAJ\Lib\Persis
+namespace WAJ\Lib\Persis;
 
 use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Yaml\Exception\ParseException;
@@ -80,12 +80,15 @@ class SuperYAML /*@*/
   args like calling func
 
   */
-  private static function parseInt( $yml_arr, $args = []) /*@*/
+  private static function parseInt( $ymlArr, $args = []) /*@*/
   {
     $boolVar = isset($args['boolVar'])  ?  $args['boolVar']  :  [];
 
+    if( ! $ymlArr )
+      return [];
+
     $r = [];
-    foreach( $yml_arr as $name => $v)
+    foreach( $ymlArr as $name => $v)
     {
 
       // Recurse sub arr
@@ -162,7 +165,8 @@ class SuperYAML /*@*/
 
     $a = [];
     preg_match( '/\@file\s*\(\s*(.*)\s*\)/i', $v, $a);
-    $v    = self::parseFile( $a[1], $args);  // Task
+    $v = trim($a[1]);  // quick hack: one blank too much at end
+    $v = self::parseFile( $v, $args);  // Task
 
     return $v;
   }

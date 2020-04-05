@@ -15,6 +15,7 @@
 composer require walter-a-jablonowski/super-yaml
 ```
 
+
 ### Basic usage
 
 Simliar symfony yaml
@@ -35,6 +36,7 @@ SuperYaml::dump( $yml, [   // use symfony inline, indent, flags on dumping
 ]); 
 ```
 
+
 ### Include
 
 See `demo/demo.php`: one yml file includes 2 yml-files
@@ -49,6 +51,7 @@ ANY_KEY:                     "@file(sub/sub/fil.yml)"
 Result:
 
 ![scr.jpg](misc/scr.jpg?raw=true "Scr")
+
 
 ### Replace constant string
 
@@ -69,6 +72,7 @@ SuperYaml::parse( $yml, [  // additional args as array
   ]
 ]);
 ```
+
 
 ### Include conditionally
 
@@ -104,6 +108,7 @@ Licenses of third party software see [credits](credits.md)
 
 ## Changelog
 
+* [x] **2020** - Fix, readme
 * [x] **2020** - Added readme, publication
 * [x] **2019** - Added class, improved code
 * [x] **2018** - Initial development
