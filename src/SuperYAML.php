@@ -57,7 +57,7 @@ class SuperYAML /*@*/
 
     input:
     inline = 2:
-    indent = 4:
+    indent = 2:
     flags = 0:    Normal symfony yaml flags
   
   Returns: string
@@ -136,6 +136,23 @@ class SuperYAML /*@*/
         elseif( stripos( trim($v), '@file') === 0 )  // ||      stripos( trim($v), '@use(') === 0)
         {
           $r[$name] = self::loadAddFile( $v, $args);
+        }
+
+
+        // ANY_KEY: @text([REPLACE_STRING]sub/sub/fil.yml)
+
+        elseif( stripos( $v, '@text') !== false )
+        {
+          $a = [];
+          preg_match( '/\@text\s*\(\s*(.*)\s*\)/i', $v, $a);
+
+          foreach( $a as $found )
+          {
+            $fil  = trim($found[1]);  // quick hack: one blank too much at end
+            $text = file_get_contents( $fil );
+            
+            $r[$name] = str_replace( $found[0], $text, $v );
+          }
         }
 
 

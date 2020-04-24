@@ -96,6 +96,23 @@ SuperYaml::parse( $yml, [
 ```
 
 
+### Include text
+
+Include just plain text
+
+```
+ANY_KEY: |
+
+   some text
+
+   @text(sub/sub/fil.yml)
+   
+   some text
+   
+   @text( sub/sub/fil2.yml )
+```
+
+
 ## LICENSE
 
 Copyright (C) Walter A. Jablonowski 2018-2020, MIT [License](LICENSE)
