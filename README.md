@@ -113,6 +113,14 @@ ANY_KEY: |
 ```
 
 
+## Changelog
+
+* [x] **2020** - Fix, readme
+* [x] **2020** - Added readme, publication
+* [x] **2019** - Added class, improved code
+* [x] **2018** - Initial development
+
+
 ## LICENSE
 
 Copyright (C) Walter A. Jablonowski 2018-2020, MIT [License](LICENSE)
@@ -121,11 +129,3 @@ Licenses of third party software see [credits](credits.md)
 
 
 [Privacy](https://walter-a-jablonowski.github.io/privacy.html) | [Legal](https://walter-a-jablonowski.github.io/imprint.html)
-
-
-## Changelog
-
-* [x] **2020** - Fix, readme
-* [x] **2020** - Added readme, publication
-* [x] **2019** - Added class, improved code
-* [x] **2018** - Initial development
